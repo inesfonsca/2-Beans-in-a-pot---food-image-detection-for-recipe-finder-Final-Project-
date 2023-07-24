@@ -33,5 +33,3 @@ Web Scraping: Python's web scraping libraries are used to crawl the 24 Kitchen w
 
 The web app serves as an excellent tool for food enthusiasts, helping them discover new recipes based on the ingredients they have at hand, making cooking a delightful experience. Feel free to contribute to the project and share your ideas to further enhance its capabilities.
 
-![Alt Text](Demo_web_app_images/Demo_web_app_1.jpg)
-
