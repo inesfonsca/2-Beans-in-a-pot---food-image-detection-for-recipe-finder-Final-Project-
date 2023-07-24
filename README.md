@@ -22,14 +22,8 @@ Difficulty and Category Filters: Users can further refine their recipe search by
 
 
 Technologies Used:
-Flask: The web app is built using the Flask web framework, allowing for easy integration of the AI APIs and web scraping functionalities.
-
-Google Cloud Vision API: This powerful API is utilized for image recognition, allowing the app to extract ingredient information from the uploaded food images.
-
-Clarifai API: The Clarifai API complements the image detection capabilities of the Google Cloud Vision API, enhancing the accuracy of ingredient identification.
-
-Web Scraping: Python's web scraping libraries are used to crawl the 24 Kitchen website, extracting a rich dataset of recipes for the app's recipe finder feature.
+Flask, Google Cloud Vision API, Clarifai API, Web Scraping
 
 
-The web app serves as an excellent tool for food enthusiasts, helping them discover new recipes based on the ingredients they have at hand, making cooking a delightful experience. Feel free to contribute to the project and share your ideas to further enhance its capabilities.
+The web app serves as an excellent tool for food enthusiasts, helping them discover new recipes based on the ingredients they have at hand, making cooking a delightful experience. Feel free to contact me if you want to contribute to the project and share your ideas to further enhance its capabilities.
 
