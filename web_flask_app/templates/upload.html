@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--Fonts that I used-->
+    <link rel="stylesheet" href="https://use.typekit.net/gkm1ocb.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zcp2buk.css">
+  <title>2 BEANS IN A POT</title>
+  <!--CSS STYLE-->
+  <style>
+    
+	
+	body {
+      background-color: #B6C471;
+	  
+    }
+    
+    .container {
+      width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+	  font-weight: bold;
+	  font-family: "Arial Black", Arial, sans-serif;
+    }
+
+    
+    .container_3 {
+    width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 50px;
+	  font-weight: bold;
+	  font-family: "Arial Black", Arial, sans-serif;
+      margin-top: 0%;
+      border: 4px solid #002F15;
+ 
+    }
+    .container_3 h2 {
+      color: #FFF0D4;
+      background-color: #002F15;
+      padding: 10px; 
+	  font-family: "congenial", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+
+    .container h2 {
+      color: white;
+      background-color: #002F15;
+      padding: 10px; 
+	  font-weight: bold;	
+      font-family: "Arial Black", Arial, sans-serif;	
+      border: 4px solid #002F15;
+   
+    }
+    
+    .upload-button {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+     .upload-button button {
+      padding: 10px 20px;
+      background-color: #002F15;
+      color: white;
+      border: none;
+      cursor: pointer;
+	  font-weight: bold;
+      font-family: "Arial Black", Arial, sans-serif;
+    }
+	
+   
+	
+	h1 {
+	font-size: 80px;
+    font-family: "congenial", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+	margin-bottom: 0px;
+	}
+	
+	h2 {
+	font-size: 20px;
+	font-family: Abadi Extra Light;
+	font-weight: bold;
+    margin-top: 0%;
+    margin-bottom: 0%;
+	}
+	
+	.checkbox-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .checkbox-container label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .tag-container .text_body {
+  color: #2f2d00;
+  display: grid;
+  grid-gap: 10px;
+  width: 760px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: "abadi", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.checkbox-container input[type="checkbox"] {
+  /* default checkboxes */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* custom size for the checkboxes */
+  width: 16px;
+  height: 16px;
+  /* custom styles for the checkbox */
+  border: 2px solid #002F15;
+  border-radius: 4px;
+  background-color: #FFF0D4;
+  /* space between the checkbox and the label */
+  margin-right: 8px;
+  /* Position the label relative to the checkbox */
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Adjust the size and appearance of the checkbox dot */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #002F15;
+}
+
+	
+	  .tag-container {
+        margin-bottom: 25px;
+    color: #002F15;
+    display: grid;
+    grid-gap: 10px;
+    width: 740px;
+    margin-top: 25px;
+    margin-left: 20px;
+    font-family: "abadi", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    text-align: left;
+    font-weight: lighter;
+ 
+        }
+	
+	  .container_Box {
+      display: flex;
+	  text-align:left;
+      background-color: #FFF0D4;;
+     
+    }
+    
+    .tag-container-category label,
+    .tag-container-difficulty label {
+      display: block;
+      margin-bottom: 5px;
+    }
+	
+	.text_body{
+	color: #002F15;
+	font-size: 15px;
+	font-family: "abadi", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+	}
+
+    .file-input {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  color: #002F15;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.tag-container-category input[type="checkbox"] {
+ 
+  /* custom size for the checkboxes */
+  width: 16px;
+  height: 16px;
+  /* custom styles for the checkbox */
+  border: 2px solid #002F15;
+  border-radius: 4px;
+  background-color: #FFF0D4;
+
+  /* Position the label relative to the checkbox */
+  position: relative;
+  /* Add a custom checkmark */
+}
+
+.tag-container-category input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #002F15;
+}
+
+.tag-container-difficulty {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-container-difficulty label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Add space between the checkboxes and labels */
+}
+
+.tag-container-difficulty input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /*custom size for the checkboxes */
+  width: 16px;
+  height: 16px;
+  /*custom styles for the checkbox */
+  border: 2px solid #002F15;
+  border-radius: 4px;
+  background-color: #FFF0D4;
+  /*space between the checkbox and the label */
+  margin-right: 8px;
+  /* Position the label relative to the checkbox */
+  position: relative;
+}
+
+.tag-container-difficulty input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #002F15;
+}
+
+.custom-button {
+    padding: 15px 30px;
+    background-color: #002F15;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "congenial", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.custom-button:hover {
+    background-color: #004d29;
+}
+
+.contact-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact-button a {
+  display: inline-block;
+  color: #002F15;
+  text-decoration: none;
+  font-family: "abadi", sans-serif;
+  font-weight: 150;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.contact-button a img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.contact-button a span {
+  margin-left: 5px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+	
+  </style>
+</head>
+<body>
+
+  <div class="container">
+<table>
+    <tr>
+      <!--Images on the title-->
+      <td><img style="height:100px;" src="{{ url_for('static', filename='Tomates.png')}}" alt="tomates"></td>
+      <td><h1><span style="color: white;">2</span> <span style="color: #002F15;">BEANS IN A P</span><img style="height:50px ;" src="{{ url_for('static', filename='Picture8.png')}}" alt="limao"><span style="color: #002F15;">T</span></h1></td>
+    </tr>
+	<tr>
+	<td style="width: 20%">
+	</td>
+    <td style="width: 80%; text-align: right;">
+        <div style="display: flex; align-items: center; margin-left: 100px;">
+          <span class="text_body" style="font-size: 20px;">food image detection for recipe finder with</span>
+          <img style="height: 80px; margin-left: 7px;" src="{{ url_for('static', filename='24Kitchen.png')}}" alt="24Kitchen">
+        </div>
+      </td>
+  </table>
+  
+  </div>
+<!--Instructions checkbox-->
+
+  <div class="container_3">
+    <h2>INSTRUÇÕES</h2>
+    <div class="checkbox-container tag-container">
+        
+        <label>
+            <input type="checkbox" name="checkbox1" disabled>
+            <span class="text_body">Faça upload de uma imagem nítida do(s) ingrediente(s) que deseja usar.</span>
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox2"" disabled>
+            <span class="text_body">Certifique-se de que a imagem contenha apenas um ingrediente de cada tipo.</span>
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox3" disabled>
+            <span class="text_body">Escolha as opções de busca de receitas como categorias ou nível de dificuldade..</span>
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox4" disabled>
+            <span class="text_body">Clique no botão “UPLOAD“. </span>
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox5"" disabled>
+            <span class="text_body">Verifique se o ingrediente reconhecido pelo sistema corresponde ao que você deseja usar. Se necessário, corrija ou faça um novo upload.</span>
+        </label>
+    </div>
+  </div>
+ <!--To upload the image--> 
+  <div class="container_3"> 
+    <div><h2>CARREGAR IMAGEM</h2></div>
+    <div style="background-color: #FFF0D4; height: 150px;"> 
+        <form id="form_ingredient" action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg, .jpeg, .png" class="file-input"><br>
+</div>
+  </div>
+
+  <div class="container_3">
+    <div><h2>ESCOLHA A CATEGORIA E A DIFICULDADE</h2></div>
+    
+	 <div class="container_Box">
+  
+     <div class="tag-container tag-container-category">
+        
+            
+                            <label><input type="checkbox" name="category" value="Prato Principal">Prato Principal</label>
+                            <label><input type="checkbox" name="category" value="Sobremesa">Sobremesa</label>
+                            <label><input type="checkbox" name="category" value="Acompanhamento">Acompanhamento</label>
+                            <label><input type="checkbox" name="category" value="Saladas">Saladas</label>
+                            <label><input type="checkbox" name="category" value="Pequeno-almoço e Brunch">Pequeno-almoço e Brunch</label>
+                            <label><input type="checkbox" name="category" value="Aperitivos e Petiscos">Aperitivos e Petiscos</label>
+                            <label><input type="checkbox" name="category" value="Aperitivos e Petiscos">Sopas e Cremes</label>
+              
+                        </div>
+                        
+                        <div class="tag-container tag-container-difficulty">
+                            <label><input type="checkbox" name="difficulty" value="fácil"> Fácil (Até 30 minutos)</label>
+                            <label><input type="checkbox" name="difficulty" value="média"> Médio (45 minutos)</label>
+                            <label><input type="checkbox" name="difficulty" value="dificil"> Difícil (mais de 60 minutos)</label>
+                  
+                            
+                          </div>
+                          <td style="vertical-align: middle; padding-right: 500px;"><img style="height: 60px;" src="{{ url_for('static', filename='Picture11.png')}}" alt="tomates"></td>
+
+
+  </div>
+		
+  </div>
+  
+  <div class="container upload-button">
+    <button type="submit" class="custom-button">Upload</button>
+</div>
+  
+
+    </form>
+
+    <div class="container">
+        <!-- Your existing content here -->
+        
+        <!-- Contact Button -->
+        <div class="contact-button">
+          <a href="mailto:suporte@2beansinapot.com">
+            <span style="margin-left: 5px; vertical-align: middle;">Com Dúvidas? Fale Connosco</span>
+          </a>
+        </div>
+      </div>
+      
+
+
+<script>
+
+
+    // Function to submit the form
+function submitForm() {
+    // Get the form element using its ID
+    var form = document.getElementById("form_ingredient");
+    // Submit the form programmatically
+    form.submit();
+}
+
+
+</script>
+  
+</body>
+</html>

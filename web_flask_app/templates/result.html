@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!--Fonts that I used-->
+    <link rel="stylesheet" href="https://use.typekit.net/gkm1ocb.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zcp2buk.css">
+    
+
+   <title>2 BEANS IN A POT</title>
+   <!--CSS STYLE-->
+
+    <style>
+        body {
+            background-color: #FFF0D4;
+        }
+        
+        .container {
+      width: 800px;
+      margin-left: 15%;
+      margin-right: 10px;
+      text-align: center;
+	  font-family: "congenial", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+
+
+        table {
+            border-collapse: collapse;
+            margin-right: o;
+        }
+        
+        th, td {
+            border: none;
+            padding: 8px;
+            text-align: right;
+         
+        }
+        
+        .upload-button {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .upload-button button {
+            padding: 10px 20px;
+            background-color: #002F15;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: "congenial", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .img_class{
+	    height: 200px;
+	    }
+
+        .recipe{
+            padding-top: 50px;
+            text-align: left;
+            margin-left: 10px;
+        }  
+
+        .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#002F15;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "congenial", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  width: 200px;
+}
+
+.button:hover {
+  background-color: #002F15;
+}
+
+.upload-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+ /* Modal container */
+ .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #B6C471;
+        }
+
+        /* Modal content */
+        .modal-content {
+          background-color: #FFF0D4;
+            margin: 15% auto;
+            padding: 20px;
+            border: 2px solid #002F15;
+          border-radius: 4px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            height: 200px; 
+        }
+
+        /* Close button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color:#002F15;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .custom-button {
+    padding: 10px 20px;
+    background-color: #002F15;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "congenial", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 15px;
+    border-radius: 25px;
+    margin: 15px;
+}
+
+.custom-button:hover {
+    background-color: #004d29;
+}
+
+    </style>
+</head>
+<body>
+
+ <!--Images used on the title-->   
+  <div class="container">
+    <table>
+        <tr>
+          <td><img style="height:50px;" src="{{ url_for('static', filename='Tomates.png')}}" alt="tomates"></td>
+          <td><h1><span style="color: #B6C471 ;">2</span> <span style="color: #002F15;">BEANS IN A P</span><img style="height:23px ;" src="{{ url_for('static', filename='Picture8.png')}}" alt="limao"><span style="color: #002F15;">T</span></h1></td>
+        </tr>
+
+      </table>
+
+      <!--To return how many recipes-->
+      <div style="float: right; color: #B6C471">
+        <h2>Pode fazer {{ ingredients_number }} receitas</h2>
+      </div>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>       
+            {% for index, row in result.iterrows() %}
+            <tr>
+              <!--To return the Youtube links, some of them had image but others don't 
+                so I forced an image for those that didn'thave one-->
+                <td>
+                  {% if row['YOUTUBE'] and 'watch' in row['YOUTUBE'] %}
+                    <a href="{{ row['YOUTUBE'] }}" target="_blank">
+                      <img class="img_class" src="{{ url_for('static', filename='Picture9.jpg') }}" alt="Static Image">
+                    </a>
+                  {% else %}
+                    <a href="{{ row['YOUTUBE'] }}" target="_blank">
+                      <img class="img_class" src="https://img.youtube.com/vi/{{ row['YOUTUBE'].split('/')[-1] }}/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                  {% endif %}
+                </td>
+
+                <!--To return the URL SITE for each recipe on a button 'Saiba mais'-->
+                <td>
+                  <div style="background-color: #B6C471; height: 100px; color: white; text-align: center; height: 200px; width: 750px;">
+                    <div class="recipe">
+                      {{ row['RECEITA'] }}
+                    </div>
+                    <div class="container upload-button">
+                        <a class="button" href="{{ row['URL SITE'] }}" target="_blank">SAIBA MAIS</a>
+                      </div>
+                  </div>
+                </td>
+              </tr>   
+            {% endfor %}
+        </table>
+        
+    </div>
+
+<!-- The Modal -->
+<!--Modal appears before the recipes for the user to confirm if the ingredients were guessed correctly.
+My modal had 2 buttons, one that represents that the user confirms that the model guessed correctly the name of the ingredients.
+Button 'receitas'and another button that will return to the main page if the names of the ingredients were not correct- 'carregar nova imagem' -->
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h1 style=" font-family: 'congenial', sans-serif; font-weight: 800; font-style: normal; color:#002F15;">Confirme os ingredientes</h1>
+      <p style=" font-family: 'congenial', sans-serif; font-weight: 800; font-style: normal; color: #B6C471">{{ ingredient_name|join(', ') }}</p>
+      <button class="custom-button" onclick="closeModalAndSubmitForm()">Receitas</button>
+      <!-- button inside the modal to close the modal and go back to upload.html page -->
+      <button class="custom-button" onclick="closeModalAndPreventFormSubmission()">Carregar nova imagem</button>
+  </div>
+</div>
+
+<!-- Add a hidden input field to store the image path -->
+<input type="hidden" id="imagePath" value="{{ image_path }}">
+
+
+
+<script>
+ // Function to open the modal
+ function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+
+  // Function to close the modal, submit the form, and navigate to the result page
+  function closeModalAndSubmitForm() {
+    closeModal();
+    submitForm();
+  }
+
+  // Function to close the modal and prevent form submission
+  function closeModalAndPreventFormSubmission() {
+    closeModal();
+    // Redirect to the upload.html page
+    window.location.href = "{{ url_for('index') }}";
+  }
+
+  // Call the openModal function when the page finishes loading
+  window.onload = function() {
+    openModal();
+  };
+
+  // Prevent the modal from closing when clicking inside the modal content
+  document.getElementById("myModal").addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+
+
+
+</script>
+
+
+</body>
+</html>
