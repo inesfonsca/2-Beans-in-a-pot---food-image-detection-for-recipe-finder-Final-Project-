@@ -2,7 +2,9 @@
 
 ---Food Image Detection and Recipe Finder Web App---
 
+
 Unlock the culinary magic with my ingredient-detecting web app and discover a world of delightful recipes at your fingertips!
+
 
 
 Resume:
