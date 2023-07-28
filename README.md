@@ -27,3 +27,5 @@ Flask, Google Cloud Vision API, Clarifai API, Web Scraping
 
 The web app serves as an excellent tool for food enthusiasts, helping them discover new recipes based on the ingredients they have at hand, making cooking a delightful experience. Feel free to contact me if you want to contribute to the project and share your ideas to further enhance its capabilities.
 
+DEMO WEB APP - https://youtu.be/s9AoObTRkks
+
