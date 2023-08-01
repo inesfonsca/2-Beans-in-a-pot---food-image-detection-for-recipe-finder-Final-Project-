@@ -24,6 +24,8 @@ Difficulty and Category Filters: Users can further refine their recipe search by
 Technologies Used:
 Flask, Google Cloud Vision API, Clarifai API, Web Scraping
 
+If you want to try my web app open the folder 'web_flask_pp' run it on Visual Studio. You need to have the apis keys for Cloud Vision and clarifai, they are free and you can easily have them through their websites :-)
+
 
 The web app serves as an excellent tool for food enthusiasts, helping them discover new recipes based on the ingredients they have at hand, making cooking a delightful experience. Feel free to contact me if you want to contribute to the project and share your ideas to further enhance its capabilities.
 
